@@ -12,5 +12,7 @@ final class CounterUITests: XCTestCase {
         XCTAssertTrue(increment.exists)
         increment.tap()
         XCTAssertEqual(count.label, "1")
+        increment.tap()
+        XCTAssertEqual(count.label, "2", "Counter should display two taps")
     }
 }
