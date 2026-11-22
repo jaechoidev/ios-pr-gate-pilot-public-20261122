@@ -1,0 +1,37 @@
+// !$*UTF8*$!
+{
+ archiveVersion = 1;
+ classes = {};
+ objectVersion = 56;
+ objects = {
+  000000000000000000000008 = {isa = PBXBuildFile; fileRef = 000000000000000000000006; };
+  000000000000000000000009 = {isa = PBXBuildFile; fileRef = 000000000000000000000007; };
+  000000000000000000000006 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterPilotApp.swift; sourceTree = "<group>"; };
+  000000000000000000000007 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterUITests.swift; sourceTree = "<group>"; };
+  00000000000000000000000A = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CounterPilot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+  00000000000000000000000B = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+  000000000000000000000015 = {isa = PBXContainerItemProxy; containerPortal = 000000000000000000000001; proxyType = 1; remoteGlobalIDString = 000000000000000000000012; remoteInfo = CounterPilot; };
+  000000000000000000000014 = {isa = PBXTargetDependency; target = 000000000000000000000012; targetProxy = 000000000000000000000015; };
+  000000000000000000000002 = {isa = PBXGroup; children = (000000000000000000000004, 000000000000000000000005, 000000000000000000000003, ); sourceTree = "<group>"; };
+  000000000000000000000004 = {isa = PBXGroup; children = (000000000000000000000006, ); path = App; sourceTree = "<group>"; };
+  000000000000000000000005 = {isa = PBXGroup; children = (000000000000000000000007, ); path = Tests; sourceTree = "<group>"; };
+  000000000000000000000003 = {isa = PBXGroup; children = (00000000000000000000000A, 00000000000000000000000B, ); name = Products; sourceTree = "<group>"; };
+  00000000000000000000000C = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (000000000000000000000008, ); runOnlyForDeploymentPostprocessing = 0; };
+  00000000000000000000000D = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (000000000000000000000009, ); runOnlyForDeploymentPostprocessing = 0; };
+  00000000000000000000000E = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+  00000000000000000000000F = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+  000000000000000000000010 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+  000000000000000000000011 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+  000000000000000000000012 = {isa = PBXNativeTarget; buildConfigurationList = 000000000000000000000017; buildPhases = (00000000000000000000000C, 00000000000000000000000E, 000000000000000000000010, ); buildRules = (); dependencies = (); name = CounterPilot; productName = CounterPilot; productReference = 00000000000000000000000A; productType = "com.apple.product-type.application"; };
+  000000000000000000000013 = {isa = PBXNativeTarget; buildConfigurationList = 000000000000000000000018; buildPhases = (00000000000000000000000D, 00000000000000000000000F, 000000000000000000000011, ); buildRules = (); dependencies = (000000000000000000000014, ); name = CounterUITests; productName = CounterUITests; productReference = 00000000000000000000000B; productType = "com.apple.product-type.bundle.ui-testing"; };
+  000000000000000000000001 = {isa = PBXProject; attributes = {LastUpgradeCheck = 1640; TargetAttributes = {000000000000000000000012 = {CreatedOnToolsVersion = 16.4; }; 000000000000000000000013 = {CreatedOnToolsVersion = 16.4; TestTargetID = 000000000000000000000012; }; }; };
+   buildConfigurationList = 000000000000000000000016; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base, ); mainGroup = 000000000000000000000002; productRefGroup = 000000000000000000000003; projectDirPath = ""; projectRoot = ""; targets = (000000000000000000000012, 000000000000000000000013, ); };
+  000000000000000000000019 = {isa = XCBuildConfiguration; buildSettings = {IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SWIFT_VERSION = 5.0; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; TARGETED_DEVICE_FAMILY = 1; }; name = Debug; };
+  00000000000000000000001A = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGNING_ALLOWED = NO; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; INFOPLIST_KEY_UILaunchScreen_Generation = YES; PRODUCT_BUNDLE_IDENTIFIER = com.example.CounterPilot; PRODUCT_NAME = "$(TARGET_NAME)"; CURRENT_PROJECT_VERSION = 1; MARKETING_VERSION = 1.0; }; name = Debug; };
+  00000000000000000000001B = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGNING_ALLOWED = NO; GENERATE_INFOPLIST_FILE = YES; PRODUCT_BUNDLE_IDENTIFIER = com.example.CounterPilot.CounterUITests; PRODUCT_NAME = "$(TARGET_NAME)"; TEST_TARGET_NAME = CounterPilot; }; name = Debug; };
+  000000000000000000000016 = {isa = XCConfigurationList; buildConfigurations = (000000000000000000000019, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+  000000000000000000000017 = {isa = XCConfigurationList; buildConfigurations = (00000000000000000000001A, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+  000000000000000000000018 = {isa = XCConfigurationList; buildConfigurations = (00000000000000000000001B, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+ };
+ rootObject = 000000000000000000000001;
+}

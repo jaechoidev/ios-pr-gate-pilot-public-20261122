@@ -1,0 +1,48 @@
+name: iOS PR gate
+
+on:
+  pull_request:
+    branches: [dev]
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: macos-15
+    timeout-minutes: 18
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_16.4.app/Contents/Developer
+    steps:
+      - name: Validate pilot pull request
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PYTHON'
+          import json, os
+          with open(os.environ["GITHUB_EVENT_PATH"]) as f:
+              event = json.load(f)
+          pr = event["pull_request"]
+          repo = os.environ["GITHUB_REPOSITORY"]
+          owner = repo.split("/", 1)[0]
+          expected = (
+              pr["head"]["repo"]["full_name"] == repo
+              and pr["head"]["ref"] in {"pilot-pass", "pilot-fail"}
+              and pr["base"]["ref"] == "dev"
+              and pr["user"]["login"] == owner
+              and event["sender"]["login"] == owner
+          )
+          if not expected:
+              raise SystemExit("This disposable workflow only runs the two owner-authored fixture branches.")
+          print("PR head SHA:", pr["head"]["sha"])
+          print("PR base SHA:", pr["base"]["sha"])
+          print("Proposed merge SHA:", os.environ["GITHUB_SHA"])
+          PYTHON
+      - name: Check out proposed merge
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          persist-credentials: false
+      - name: Run counter UI test
+        shell: bash
+        run: bash verify.sh
